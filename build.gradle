@@ -31,6 +31,7 @@ buildscript {
         zxingCoreVersion = '3.5.1'
         jasyptSpringBootStarterVersion = '3.0.5'
         gsonVersion='2.10'
+        springSessionCoreVersion = '2.6.3'
     }
 
     repositories {
@@ -116,6 +117,12 @@ subprojects{
             dependency "org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet:${smileyHttpProxyServletVersion}"
             dependency "com.google.zxing:core:${zxingCoreVersion}"
             dependency "com.github.ulisesbocchio:jasypt-spring-boot-starter:${jasyptSpringBootStarterVersion}"
+
+            // SpringBoot
+            dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+            dependency "org.springframework.session:spring-session-core:${springSessionCoreVersion}"
         }
 
         imports {
