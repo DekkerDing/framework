@@ -1,0 +1,209 @@
+description '解决方案集合'
+
+buildscript {
+
+    ext {
+
+        // Import dependency management from Spring Boot a series of
+        springBootVersion = '2.6.14'
+        springDataVersion = '2022.0.0'
+        springCloudVersion = '2021.0.5'
+        springCloudAlibabaVersion = '2021.1'
+        ioSpringPlatformVersion = 'Cairo-SR8'
+
+        // Third Party
+        fastjsonVersion = '2.0.20'
+        commonsIoVersion = '2.11.0'
+        commonsLang3Version = '3.12.0'
+        arthasSpringBootVersion = '3.6.7'
+        slf4jVersion = '1.7.20'
+        mybatisplusSpringBootStarterVersion = '1.0.5'
+        mybatisPlusVersion = '3.5.2'
+        kaptchaSpringBootStarterVersion = '1.1.0'
+        hutoolAllVersion = '5.8.11'
+        mapstructVersion = '1.5.3.Final'
+        okhttpVersion = '4.10.0'
+        commonsBeanutilsVersion = '1.9.4'
+        p6spyVersion = '3.9.1'
+        jacksonVersion = '2.14.1'
+        jjwtVersion = '0.9.1'
+        smileyHttpProxyServletVersion = '1.12.1'
+        zxingCoreVersion = '3.5.1'
+        jasyptSpringBootStarterVersion = '3.0.5'
+        gsonVersion='2.10'
+    }
+
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        maven { url 'https://repo.springsource.org/plugins-release'}
+        maven { url 'https://repo.spring.io/plugins-release-local' }
+        maven { url "https://repo.spring.io/plugins-release" }
+        maven { url 'https://maven.aliyun.com/repository/central'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://maven.aliyun.com/repository/goole'}
+        maven { url 'https://maven.aliyun.com/repository/spring'}
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'https://repo.spring.io/milestone'}
+        maven { url 'https://repo.spring.io/libs-snapshot'}
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
+        maven { url "https://repo.spring.io/libs-spring-framework-build" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url 'https://repo.spring.io/plugins-snapshot' }
+        maven { url 'https://plugins.gradle.org/m2/' }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'signing'
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group 'io.github.DekkerDing'
+    version '1.0-SNAPSHOT'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    compileJava.options.encoding "UTF-8"
+    compileTestJava.options.encoding "UTF-8"
+
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+subprojects{
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        annotationProcessor 'org.projectlombok:lombok'
+        implementation 'org.projectlombok:lombok'
+        implementation "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
+        implementation "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+        implementation 'org.springframework.cloud:spring-cloud-starter'
+    }
+
+    dependencyManagement {
+
+        dependencies {
+            dependency "commons-io:commons-io:${commonsIoVersion}"
+            dependency "org.apache.commons:commons-lang3:${commonsLang3Version}"
+            dependency "com.alibaba:fastjson:${fastjsonVersion}"
+            dependency "com.google.code.gson:gson:${gsonVersion}"
+            dependency "com.baomidou:mybatisplus-spring-boot-starter:${mybatisplusSpringBootStarterVersion}"
+            dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+            dependency "org.mapstruct:mapstruct:${mapstructVersion}"
+            dependency "cn.hutool:hutool-all:${hutoolAllVersion}"
+            dependency "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+            dependency "commons-beanutils:commons-beanutils:${commonsBeanutilsVersion}"
+            dependency "p6spy:p6spy:${p6spyVersion}"
+            dependency "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+            dependency "io.jsonwebtoken:jjwt:${jjwtVersion}"
+            dependency "org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet:${smileyHttpProxyServletVersion}"
+            dependency "com.google.zxing:core:${zxingCoreVersion}"
+            dependency "com.github.ulisesbocchio:jasypt-spring-boot-starter:${jasyptSpringBootStarterVersion}"
+        }
+
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "com.taobao.arthas:arthas-spring-boot-starter:${arthasSpringBootVersion}"
+            mavenBom "org.springframework.data:spring-data-bom:${springDataVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
+    }
+}
+
+javadoc {
+    afterEvaluate {
+        configure(options) {
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            author true
+            version true
+            failOnError false
+            links "http://docs.oracle.com/javase/8/docs/api"
+        }
+    }
+}
+
+//publications {
+//
+//    mavenJava(MavenPublication) {
+//        from components.java
+//
+//        artifact sourcesJar
+//        artifact javadocJar
+//
+//        pom {
+//            name = 'mybatis-plus'
+//            packaging 'jar'
+//            description = 'An enhanced toolkit of Mybatis to simplify development.'
+//            url = 'https://github.com/baomidou/mybatis-plus'
+//
+//            scm {
+//                connection = 'scm:git@github.com:Codearte/gradle-nexus-staging-plugin.git'
+//                developerConnection = 'scm:git@github.com:Codearte/gradle-nexus-staging-plugin.git'
+//                url = 'https://github.com/baomidou/mybatis-plus'
+//            }
+//
+//            licenses {
+//                license {
+//                    name = 'The Apache License, Version 2.0'
+//                    url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                }
+//            }
+//
+//            developers {
+//                developer {
+//                    id = 'baomidou'
+//                    name = 'hubin'
+//                    email = 'jobob@qq.com'
+//                }
+//            }
+//
+//            withXml {
+//                def root = asNode()
+//                root.dependencies.'*'.findAll {
+//                    def d = it
+//                    d.scope.text() == 'runtime' && project.configurations.findByName("implementation").allDependencies.find { dep ->
+//                        dep.name == it.artifactId.text()
+//                    }.each() {
+//                        d.scope*.value = 'compile'
+//                        d.appendNode('optional', true)
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
+//jar {
+//    enabled = true
+//}
+//
+bootJar {
+    enabled = false
+}
+
+idea {
+    project {
+        jdkName = "1.8"
+        languageLevel = "1.8"
+        vcs = "Git"
+    }
+}
