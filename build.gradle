@@ -9,7 +9,10 @@ buildscript {
         springDataVersion = '2022.0.0'
         springCloudVersion = '2021.0.5'
         springCloudAlibabaVersion = '2021.1'
-        ioSpringPlatformVersion = 'Cairo-SR8'
+        springFrameworkVersion = '5.3.24'
+
+        // SpringBoot
+        springSessionCoreVersion = '2.6.3'
 
         // Third Party
         fastjsonVersion = '2.0.20'
@@ -31,7 +34,7 @@ buildscript {
         zxingCoreVersion = '3.5.1'
         jasyptSpringBootStarterVersion = '3.0.5'
         gsonVersion='2.10'
-        springSessionCoreVersion = '2.6.3'
+
     }
 
     repositories {
@@ -93,6 +96,7 @@ subprojects{
     dependencies {
         annotationProcessor 'org.projectlombok:lombok'
         implementation 'org.projectlombok:lombok'
+        implementation "org.springframework.boot:spring-boot:${springBootVersion}"
         implementation "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
         implementation "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
         implementation 'org.springframework.cloud:spring-cloud-starter'
@@ -119,10 +123,14 @@ subprojects{
             dependency "com.github.ulisesbocchio:jasypt-spring-boot-starter:${jasyptSpringBootStarterVersion}"
 
             // SpringBoot
+            dependency "org.springframework.boot:spring-boot-starter:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
             dependency "org.springframework.session:spring-session-core:${springSessionCoreVersion}"
+            dependency "org.springframework:spring-web:${springFrameworkVersion}"
+            dependency "org.springframework:spring-core:${springFrameworkVersion}"
+            dependency "org.springframework:spring-aop:${springFrameworkVersion}"
         }
 
         imports {

@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-
+ compileOnly 'org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet'
 }
 
 test {
