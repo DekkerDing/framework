@@ -18,7 +18,6 @@ buildscript {
         fastjsonVersion = '2.0.20'
         commonsIoVersion = '2.11.0'
         commonsLang3Version = '3.12.0'
-        arthasSpringBootVersion = '3.6.7'
         slf4jVersion = '1.7.20'
         mybatisplusSpringBootStarterVersion = '1.0.5'
         mybatisPlusVersion = '3.5.2'
@@ -78,7 +77,6 @@ allprojects {
     compileJava.options.encoding "UTF-8"
     compileTestJava.options.encoding "UTF-8"
 
-
     dependencies {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
@@ -103,7 +101,6 @@ subprojects{
     }
 
     dependencyManagement {
-
         dependencies {
             dependency "commons-io:commons-io:${commonsIoVersion}"
             dependency "org.apache.commons:commons-lang3:${commonsLang3Version}"
@@ -125,11 +122,15 @@ subprojects{
             // SpringBoot
             dependency "org.springframework.boot:spring-boot-starter:${springBootVersion}"
             dependency "org.springframework.session:spring-session-core:${springSessionCoreVersion}"
+            dependency "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
+
         }
 
         imports {
             mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
-            mavenBom "com.taobao.arthas:arthas-spring-boot-starter:${arthasSpringBootVersion}"
             mavenBom "org.springframework.data:spring-data-bom:${springDataVersion}"
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
             mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
@@ -204,7 +205,7 @@ javadoc {
 //jar {
 //    enabled = true
 //}
-//
+
 bootJar {
     enabled = false
 }

@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    compileOnly "com.taobao.arthas:arthas-spring-boot-starter:${arthasSpringBootVersion}"
+
 }
 
 test {
