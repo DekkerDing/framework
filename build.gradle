@@ -95,11 +95,11 @@ subprojects{
 
     dependencies {
         annotationProcessor 'org.projectlombok:lombok'
-        implementation 'org.projectlombok:lombok'
-        implementation "org.springframework.boot:spring-boot:${springBootVersion}"
-        implementation "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
-        implementation "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
-        implementation 'org.springframework.cloud:spring-cloud-starter'
+        api 'org.projectlombok:lombok'
+        api "org.springframework.boot:spring-boot:${springBootVersion}"
+        api "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
+        api "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+        api 'org.springframework.cloud:spring-cloud-starter'
     }
 
     dependencyManagement {
@@ -124,13 +124,7 @@ subprojects{
 
             // SpringBoot
             dependency "org.springframework.boot:spring-boot-starter:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
             dependency "org.springframework.session:spring-session-core:${springSessionCoreVersion}"
-            dependency "org.springframework:spring-web:${springFrameworkVersion}"
-            dependency "org.springframework:spring-core:${springFrameworkVersion}"
-            dependency "org.springframework:spring-aop:${springFrameworkVersion}"
         }
 
         imports {
