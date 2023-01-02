@@ -34,6 +34,8 @@ buildscript {
         jasyptSpringBootStarterVersion = '3.0.5'
         gsonVersion='2.10'
 
+        // Test
+        junitVersion = '5.8.2'
     }
 
     repositories {
@@ -78,8 +80,8 @@ allprojects {
     compileTestJava.options.encoding "UTF-8"
 
     dependencies {
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     }
 
     test {
@@ -216,4 +218,9 @@ idea {
         languageLevel = "1.8"
         vcs = "Git"
     }
+}
+
+configurations.all(){
+    Configuration configuration ->
+        configuration.resolutionStrategy.failOnVersionConflict()
 }
