@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    compileOnly "com.taobao.arthas:arthas-spring-boot-starter:${arthasSpringBootVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}

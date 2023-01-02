@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation 'org.springframework:spring-tx'
+}
+
+test {
+    useJUnitPlatform()
+}
