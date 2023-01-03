@@ -38,4 +38,7 @@ include 'proxy'
 include 'config'
 include 'context'
 include 'tx'
+include 'allpay'
+include 'security'
+include 'message'
 
