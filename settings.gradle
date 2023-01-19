@@ -41,4 +41,6 @@ include 'tx'
 include 'allpay'
 include 'security'
 include 'message'
+include 'template'
+include 'engine'
 
