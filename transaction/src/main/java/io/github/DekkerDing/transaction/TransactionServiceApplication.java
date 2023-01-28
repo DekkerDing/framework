@@ -1,13 +1,15 @@
-package io.github.DekkerDing.allpay;
+package io.github.DekkerDing.transaction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
+@EnableTransactionManagement
 @EnableConfigurationProperties
-public class AllPayServiceApplication {
+public class TransactionServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AllPayServiceApplication.class, args);
+        SpringApplication.run(TransactionServiceApplication.class, args);
     }
 }
