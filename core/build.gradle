@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '核心类'
+
 dependencies {
 
 }

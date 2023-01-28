@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '对象集合'
+
 dependencies {
     implementation 'commons-beanutils:commons-beanutils'
     implementation 'org.apache.commons:commons-lang3'

@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-description '日志等记录'
+description '扩展'
 
 dependencies {
 

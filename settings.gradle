@@ -51,4 +51,6 @@ include 'holder'
 include 'manager'
 include 'aware'
 include 'pipeline'
+include 'executor'
+include 'extension'
 
