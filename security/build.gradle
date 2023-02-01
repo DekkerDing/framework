@@ -2,8 +2,11 @@ plugins {
     id 'java'
 }
 
-dependencies {
+description '安全权限'
 
+dependencies {
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 test {
