@@ -54,4 +54,5 @@ include 'pipeline'
 include 'executor'
 include 'extension'
 include 'task'
+include 'plugin'
 
