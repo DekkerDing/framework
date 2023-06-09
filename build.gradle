@@ -32,7 +32,8 @@ buildscript {
         smileyHttpProxyServletVersion = '1.12.1'
         zxingCoreVersion = '3.5.1'
         jasyptSpringBootStarterVersion = '3.0.5'
-        gsonVersion='2.10'
+        gsonVersion = '2.10'
+        disruptorVersion = '3.4.4'
 
         // Test
         junitVersion = '5.8.2'
@@ -41,17 +42,18 @@ buildscript {
     repositories {
         mavenLocal()
         gradlePluginPortal()
-        maven { url 'https://repo.springsource.org/plugins-release'}
+        maven { url 'https://repo.springsource.org/plugins-release' }
         maven { url 'https://repo.spring.io/plugins-release-local' }
         maven { url "https://repo.spring.io/plugins-release" }
-        maven { url 'https://maven.aliyun.com/repository/central'}
-        maven { url 'https://maven.aliyun.com/repository/public'}
-        maven { url 'https://maven.aliyun.com/repository/goole'}
-        maven { url 'https://maven.aliyun.com/repository/spring'}
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
-        maven { url 'https://repo.spring.io/milestone'}
-        maven { url 'https://repo.spring.io/libs-snapshot'}
-        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/goole' }
+        maven { url 'https://maven.aliyun.com/repository/spring' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/libs-snapshot' }
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
         maven { url "https://repo.spring.io/libs-spring-framework-build" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url 'https://repo.spring.io/plugins-snapshot' }
@@ -65,6 +67,7 @@ buildscript {
 }
 
 allprojects {
+    apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
@@ -89,7 +92,7 @@ allprojects {
     }
 }
 
-subprojects{
+subprojects {
 
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
@@ -222,7 +225,8 @@ idea {
     }
 }
 
-configurations.all(){
+configurations.all() {
     Configuration configuration ->
         configuration.resolutionStrategy.failOnVersionConflict()
 }
+

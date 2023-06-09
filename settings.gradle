@@ -12,6 +12,7 @@ buildscript {
             maven { url 'https://maven.aliyun.com/repository/goole'}
             maven { url 'https://maven.aliyun.com/repository/spring'}
             maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
+            maven {url 'https://maven.aliyun.com/repository/gradle-plugin'}
             maven { url 'https://repo.spring.io/milestone'}
             maven { url 'https://repo.spring.io/libs-snapshot'}
             maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
@@ -55,4 +56,9 @@ include 'executor'
 include 'extension'
 include 'task'
 include 'plugin'
+include 'batch'
+include 'memory'
+include 'tenant'
+include 'pool'
+include 'initialize'
 

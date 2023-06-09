@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+description '内存管理'
+
+dependencies {
+// https://mvnrepository.com/artifact/com.h2database/h2
+    implementation 'com.h2database:h2'
+}
+
+test {
+    useJUnitPlatform()
+}

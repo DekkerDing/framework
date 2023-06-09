@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Title: Starter for using Spring Batch
+Automatic-Module-Name: spring.boot.starter.batch
+Implementation-Version: 2.6.14
+Built-By: DekkerDing
+Spring-Boot-Jar-Type: dependencies-starter
+Build-Jdk-Spec: 1.8
+
