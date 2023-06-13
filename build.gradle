@@ -133,7 +133,8 @@ subprojects {
             dependency "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
-
+            dependency "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-autoconfigure-processor:${springBootVersion}"
         }
 
         imports {
