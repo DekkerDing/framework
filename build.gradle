@@ -10,18 +10,23 @@ buildscript {
         springCloudVersion = '2021.0.5'
         springCloudAlibabaVersion = '2021.1'
         springFrameworkVersion = '5.3.24'
+        springSecurityOauth2AuthorizationServerVersion = '0.4.2'
 
         // SpringBoot
         springSessionCoreVersion = '2.6.3'
+
+        // SpringBootStarter
+        mybatisplusSpringBootStarterVersion = '1.0.5'
+        kaptchaSpringBootStarterVersion = '1.1.0'
+        jasyptSpringBootStarterVersion = '3.0.5'
 
         // Third Party
         fastjsonVersion = '2.0.20'
         commonsIoVersion = '2.11.0'
         commonsLang3Version = '3.12.0'
         slf4jVersion = '1.7.20'
-        mybatisplusSpringBootStarterVersion = '1.0.5'
+
         mybatisPlusVersion = '3.5.2'
-        kaptchaSpringBootStarterVersion = '1.1.0'
         hutoolAllVersion = '5.8.11'
         mapstructVersion = '1.5.3.Final'
         okhttpVersion = '4.10.0'
@@ -31,7 +36,6 @@ buildscript {
         jjwtVersion = '0.9.1'
         smileyHttpProxyServletVersion = '1.12.1'
         zxingCoreVersion = '3.5.1'
-        jasyptSpringBootStarterVersion = '3.0.5'
         gsonVersion = '2.10'
         disruptorVersion = '3.4.4'
 

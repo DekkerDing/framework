@@ -5,10 +5,16 @@ plugins {
 description '安全权限'
 
 dependencies {
+
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
+// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server
+    implementation "org.springframework.security:spring-security-oauth2-authorization-server:${springSecurityOauth2AuthorizationServerVersion}"
+
     api project(':events')
+
+    api project(':web')
 }
 
 test {
