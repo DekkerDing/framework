@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web') {
-        transitive(false)
+        // transitive(false)
     }
     implementation('org.springframework.session:spring-session-core') {
         transitive(false)

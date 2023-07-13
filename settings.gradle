@@ -63,4 +63,5 @@ include 'pool'
 include 'initialize'
 include 'reactive'
 include 'register'
+include 'boot'
 
