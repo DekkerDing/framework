@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+description 'aop'
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}

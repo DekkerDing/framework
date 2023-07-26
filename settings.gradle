@@ -64,4 +64,5 @@ include 'initialize'
 include 'reactive'
 include 'register'
 include 'boot'
+include 'aspects'
 
