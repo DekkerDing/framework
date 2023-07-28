@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-description 'aop'
+description '代理切面'
 
 dependencies {
 

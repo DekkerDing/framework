@@ -27,6 +27,7 @@ buildscript {
         slf4jVersion = '1.7.20'
 
         mybatisPlusVersion = '3.5.2'
+        dynamicDatasourceVersion = '3.5.2'
         hutoolAllVersion = '5.8.11'
         mapstructVersion = '1.5.3.Final'
         okhttpVersion = '4.10.0'
@@ -129,6 +130,7 @@ subprojects {
             dependency "org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet:${smileyHttpProxyServletVersion}"
             dependency "com.google.zxing:core:${zxingCoreVersion}"
             dependency "com.github.ulisesbocchio:jasypt-spring-boot-starter:${jasyptSpringBootStarterVersion}"
+            dependency "com.baomidou:dynamic-datasource-spring-boot-starter:${dynamicDatasourceVersion}"
 
             // SpringBoot
             dependency "org.springframework.boot:spring-boot-starter:${springBootVersion}"

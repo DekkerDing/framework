@@ -2,24 +2,28 @@ plugins {
     id 'java'
 }
 
+description '存储'
+
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa') {
-        transitive(false)
+        transitive(true)
     }
     implementation('com.mysql:mysql-connector-j') {
-        transitive(false)
+        transitive(true)
     }
     implementation('org.postgresql:postgresql') {
-        transitive(false)
+        transitive(true)
     }
     implementation('com.baomidou:mybatisplus-spring-boot-starter') {
-        transitive(false)
+        transitive(true)
     }
     implementation('com.baomidou:mybatis-plus-boot-starter') {
-        transitive(false)
+        transitive(true)
+    }
+    implementation('com.baomidou:dynamic-datasource-spring-boot-starter'){
+        transitive(true)
     }
     implementation 'p6spy:p6spy'
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
 }
 
 test {

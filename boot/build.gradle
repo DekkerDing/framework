@@ -7,6 +7,7 @@ description '启动'
 
 dependencies {
     api project(':web')
+    api project(':storage')
 }
 
 test {
