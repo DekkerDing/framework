@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+description '构造者'
+
+dependencies {
+//    implementation('org.springframework.boot:spring-boot-starter-data-jpa') {
+//        transitive(true)
+//    }
+}
+
+test {
+    useJUnitPlatform()
+}

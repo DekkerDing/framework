@@ -39,6 +39,7 @@ buildscript {
         zxingCoreVersion = '3.5.1'
         gsonVersion = '2.10'
         disruptorVersion = '3.4.4'
+        reactorVersion = '2022.0.9'
 
         // Test
         junitVersion = '5.8.2'
@@ -57,6 +58,7 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
         maven { url 'https://repo.spring.io/libs-snapshot' }
         maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
         maven { url "https://repo.spring.io/libs-spring-framework-build" }
@@ -136,6 +138,7 @@ subprojects {
             dependency "org.springframework.boot:spring-boot-starter:${springBootVersion}"
             dependency "org.springframework.session:spring-session-core:${springSessionCoreVersion}"
             dependency "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+            dependency "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
             dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
@@ -148,6 +151,7 @@ subprojects {
             mavenBom "org.springframework.data:spring-data-bom:${springDataVersion}"
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
             mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+            mavenBom "io.projectreactor:reactor-bom:${reactorVersion}"
         }
     }
 }

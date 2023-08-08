@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+description '客户端'
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}

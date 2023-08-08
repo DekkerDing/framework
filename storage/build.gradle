@@ -5,9 +5,6 @@ plugins {
 description '存储'
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa') {
-        transitive(true)
-    }
     implementation('com.mysql:mysql-connector-j') {
         transitive(true)
     }

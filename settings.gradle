@@ -14,6 +14,7 @@ buildscript {
             maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
             maven {url 'https://maven.aliyun.com/repository/gradle-plugin'}
             maven { url 'https://repo.spring.io/milestone'}
+            maven { url 'https://repo.spring.io/snapshot' }
             maven { url 'https://repo.spring.io/libs-snapshot'}
             maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
             maven { url "https://repo.spring.io/libs-spring-framework-build" }
@@ -65,4 +66,6 @@ include 'reactive'
 include 'register'
 include 'boot'
 include 'aspects'
+include 'builder'
+include 'client'
 

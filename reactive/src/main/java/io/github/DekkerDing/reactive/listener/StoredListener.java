@@ -1,4 +1,4 @@
-package io.github.DekkerDing.reactive.events.listener;
+package io.github.DekkerDing.reactive.listener;
 
 import io.github.DekkerDing.events.event.StoredEvent;
 import org.springframework.context.ApplicationListener;

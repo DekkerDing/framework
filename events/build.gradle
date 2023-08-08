@@ -3,10 +3,8 @@ plugins {
 }
 
 dependencies {
-
     // https://mvnrepository.com/artifact/com.lmax/disruptor
     implementation "com.lmax:disruptor:${disruptorVersion}"
-
 }
 
 test {
