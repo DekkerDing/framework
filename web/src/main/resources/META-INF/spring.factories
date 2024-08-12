@@ -1,3 +1,4 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.github.DekkerDing.web.config.WebConfig
+  io.github.DekkerDing.web.config.WebConfig,\
+  io.github.DekkerDing.web.config.ResourceServerAutoConfiguration

@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public interface GetSingle <T, R> {
 
-    default Optional echo (T parameter, Predicate<T> predicate, Function<T, Optional> function){
+    default Optional<?> echo (T parameter, Predicate<T> predicate, Function<T, Optional<?>> function){
         if(predicate.test(parameter)){
            return function.apply(parameter);
         }

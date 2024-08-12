@@ -5,17 +5,13 @@ plugins {
 dependencies {
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux
-    implementation('org.springframework.boot:spring-boot-starter-webflux') {
-        transitive(true)
-    }
+    api('org.springframework.boot:spring-boot-starter-web')
 
-//    implementation('org.springframework.boot:spring-boot-starter-web') {
-//        // transitive(false)
-//    }
+    //api('org.springframework.boot:spring-boot-starter-webflux')
 
-    implementation('org.springframework.session:spring-session-core') {
-        transitive(true)
-    }
+    api('org.springframework.security:spring-security-web')
+
+    api project(':security')
 }
 
 test {

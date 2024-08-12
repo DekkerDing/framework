@@ -9,15 +9,15 @@ public interface GetMulti<T, R> {
 
     public abstract T all(Supplier<T> supplier);
 
-    default Optional list(T parameter, Function<T, Optional> function) {
+    default Optional<?> list(T parameter, Function<T, Optional<?>> function) {
         return function.apply(parameter);
     }
 
-    default Optional map(T parameter, Function<T, Optional> function) {
+    default Optional<?> map(T parameter, Function<T, Optional<?>> function) {
         return function.apply(parameter);
     }
 
-    default Optional set(T parameter, Function<T, Optional> function) {
+    default Optional<?> set(T parameter, Function<T, Optional<?>> function) {
         return function.apply(parameter);
     }
 
@@ -33,11 +33,10 @@ public interface GetMulti<T, R> {
             list.add(apply1);
             return list;
         }
-        Random r = new Random(2);
-        final int nextInt = r.nextInt(2);
-        if (nextInt == 1) {
+        Random r = new Random();
+        if (r.nextBoolean()) {
             list.add(apply1);
-        } else if (nextInt == 2) {
+        } else {
             list.add(apply2);
         }
         return list;

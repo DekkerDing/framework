@@ -11,6 +11,8 @@ import java.time.Clock;
 @Slf4j
 public class Event extends ApplicationEvent {
 
+    private String eventType;
+
 
 
 

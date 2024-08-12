@@ -1,9 +1,11 @@
 #server:
 #    port: 8080
 #
-#spring:
-#    main:
-#        allow-circular-references: true
+spring:
+    main:
+        allow-bean-definition-overriding: true
+        allow-circular-references: true
+
 #    datasource:
 #        dynamic:
 #            primary: storage
