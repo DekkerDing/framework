@@ -2,10 +2,18 @@ plugins {
     id 'java'
 }
 
+description '响应式'
+
 dependencies {
 
     implementation platform("io.projectreactor:reactor-bom:${reactorVersion}")
     implementation 'io.projectreactor:reactor-core'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    implementation ('org.springframework.boot:spring-boot-actuator'){
+        exclude group: 'org.springframework', module: 'spring-webmvc'
+        exclude group: 'org.springframework', module: 'spring-boot-starter-tomcat'
+    }
 }
 
 test {

@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '代理'
+
 dependencies {
     implementation('org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet') {
         transitive(false)

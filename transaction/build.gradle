@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '事务'
+
 dependencies {
     implementation 'org.springframework:spring-tx'
 }

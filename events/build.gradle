@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '事件中心'
+
 dependencies {
     // https://mvnrepository.com/artifact/com.lmax/disruptor
     implementation "com.lmax:disruptor:${disruptorVersion}"

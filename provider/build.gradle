@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '门面模式功能提供者'
+
 dependencies {
 
 }

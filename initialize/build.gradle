@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '初始化'
+
 dependencies {
 
 }

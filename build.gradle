@@ -40,6 +40,14 @@ buildscript {
         gsonVersion = '2.10'
         disruptorVersion = '3.4.4'
         reactorVersion = '2022.0.9'
+        jasper = '11.0.0-M20'
+
+        //Azure
+        identityVersion = '1.13.2'
+        msal4jVersion = '1.16.2'
+
+        //OTP
+        aerogearOTPVersion = '1.0.0'
 
         // Test
         junitVersion = '5.8.2'
@@ -81,6 +89,7 @@ allprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
+
     group 'io.github.DekkerDing'
     version '1.0-SNAPSHOT'
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -105,7 +114,9 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
 
     dependencies {
+        developmentOnly "org.springframework.boot:spring-boot-devtools"
         annotationProcessor 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
         api 'org.projectlombok:lombok'
         api "org.springframework.boot:spring-boot:${springBootVersion}"
         api "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
@@ -157,6 +168,7 @@ subprojects {
 }
 
 javadoc {
+    failOnError false
     afterEvaluate {
         configure(options) {
             encoding "UTF-8"
@@ -169,60 +181,68 @@ javadoc {
     }
 }
 
-//publications {
+//publishing{
+//    publications {
 //
-//    mavenJava(MavenPublication) {
-//        from components.java
+//        mavenJava(MavenPublication) {
+//            from components.java
 //
-//        artifact sourcesJar
-//        artifact javadocJar
+//            artifact sourcesJar
+//            artifact javadocJar
 //
-//        pom {
-//            name = 'mybatis-plus'
-//            packaging 'jar'
-//            description = 'An enhanced toolkit of Mybatis to simplify development.'
-//            url = 'https://github.com/baomidou/mybatis-plus'
-//
-//            scm {
-//                connection = 'scm:git@github.com:Codearte/gradle-nexus-staging-plugin.git'
-//                developerConnection = 'scm:git@github.com:Codearte/gradle-nexus-staging-plugin.git'
+//            pom {
+//                name = 'mybatis-plus'
+//                packaging 'jar'
+//                description = 'An enhanced toolkit of Mybatis to simplify development.'
 //                url = 'https://github.com/baomidou/mybatis-plus'
-//            }
 //
-//            licenses {
-//                license {
-//                    name = 'The Apache License, Version 2.0'
-//                    url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                scm {
+//                    connection = 'scm:git@github.com:Codearte/gradle-nexus-staging-plugin.git'
+//                    developerConnection = 'scm:git@github.com:Codearte/gradle-nexus-staging-plugin.git'
+//                    url = 'https://github.com/baomidou/mybatis-plus'
 //                }
-//            }
 //
-//            developers {
-//                developer {
-//                    id = 'baomidou'
-//                    name = 'hubin'
-//                    email = 'jobob@qq.com'
+//                licenses {
+//                    license {
+//                        name = 'The Apache License, Version 2.0'
+//                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
 //                }
-//            }
 //
-//            withXml {
-//                def root = asNode()
-//                root.dependencies.'*'.findAll {
-//                    def d = it
-//                    d.scope.text() == 'runtime' && project.configurations.findByName("implementation").allDependencies.find { dep ->
-//                        dep.name == it.artifactId.text()
-//                    }.each() {
-//                        d.scope*.value = 'compile'
-//                        d.appendNode('optional', true)
+//                developers {
+//                    developer {
+//                        id = 'baomidou'
+//                        name = 'hubin'
+//                        email = 'jobob@qq.com'
+//                    }
+//                }
+//
+//                withXml {
+//                    def root = asNode()
+//                    root.dependencies.'*'.findAll {
+//                        def d = it
+//                        d.scope.text() == 'runtime' && project.configurations.findByName("implementation").allDependencies.find { dep ->
+//                            dep.name == it.artifactId.text()
+//                        }.each() {
+//                            d.scope*.value = 'compile'
+//                            d.appendNode('optional', true)
+//                        }
 //                    }
 //                }
 //            }
 //        }
 //    }
+//    repositories {
+//        maven {
+//            allowInsecureProtocol = true
+//            url = uri("${project.buildDir}/repo")
+//        }
+//    }
 //}
 
-//jar {
-//    enabled = true
-//}
+jar {
+    enabled = true
+}
 
 bootJar {
     enabled = false
@@ -241,3 +261,8 @@ configurations.all() {
         configuration.resolutionStrategy.failOnVersionConflict()
 }
 
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile){
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+}

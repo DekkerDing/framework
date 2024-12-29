@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+description '注册中心'
+
 dependencies {
 
 }

@@ -15,11 +15,26 @@ dependencies {
 
     api('org.springframework.security:spring-security-crypto')
 
+    // https://mvnrepository.com/artifact/com.azure/azure-identity
+//    api("com.azure:azure-identity:${identityVersion}"){
+//        transitive(true)
+//    }
 
-// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server
-    api("org.springframework.security:spring-security-oauth2-authorization-server:${springSecurityOauth2AuthorizationServerVersion}") {
+//    // https://mvnrepository.com/artifact/com.microsoft.azure/msal4j
+//    api("com.microsoft.azure:msal4j:${msal4jVersion}") {
+//        transitive(true)
+//    }
+//
+//// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server
+//    api("org.springframework.security:spring-security-oauth2-authorization-server:${springSecurityOauth2AuthorizationServerVersion}") {
+//        transitive(true)
+//    }
+
+    // https://mvnrepository.com/artifact/org.jboss.aerogear/aerogear-otp-java
+    api("org.jboss.aerogear:aerogear-otp-java:${aerogearOTPVersion}"){
         transitive(true)
     }
+
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-resource-server
     api('org.springframework.boot:spring-boot-starter-oauth2-resource-server') {
