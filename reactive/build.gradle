@@ -6,7 +6,7 @@ description '响应式'
 
 dependencies {
 
-    implementation platform("io.projectreactor:reactor-bom:${reactorVersion}")
+    implementation platform("io.projectreactor:reactor-bom:${versions.reactor}")
     implementation 'io.projectreactor:reactor-core'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
 

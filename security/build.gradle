@@ -31,7 +31,7 @@ dependencies {
 //    }
 
     // https://mvnrepository.com/artifact/org.jboss.aerogear/aerogear-otp-java
-    api("org.jboss.aerogear:aerogear-otp-java:${aerogearOTPVersion}"){
+    api('org.jboss.aerogear:aerogear-otp-java'){
         transitive(true)
     }
 

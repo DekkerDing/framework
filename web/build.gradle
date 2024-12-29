@@ -11,7 +11,7 @@ dependencies {
 
     api('org.springframework.security:spring-security-web')
 
-    api("org.apache.tomcat.embed:tomcat-embed-jasper:${jasper}") {
+    api("org.apache.tomcat.embed:tomcat-embed-jasper") {
         transitive(true)
     }
 

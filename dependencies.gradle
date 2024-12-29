@@ -1,0 +1,95 @@
+ext.versions = [
+    springBoot: '2.6.14',
+    springData: '2022.0.0',
+    springCloud: '2021.0.5',
+    springCloudAlibaba : '2021.1',
+    springFramework : '5.3.24',
+    springSecurityOauth2AuthorizationServer : '0.4.2',
+
+    // SpringBoot
+    springSessionCore : '2.6.3',
+
+    // SpringBootStarter
+    mybatisplusSpringBootStarter : '1.0.5',
+    kaptchaSpringBootStarter : '1.1.0',
+    jasyptSpringBootStarter : '3.0.5',
+
+    // Third Party
+    fastjson : '2.0.20',
+    commonsIo : '2.11.0',
+    commonsLang3 : '3.12.0',
+    slf4j : '1.7.20',
+
+    mybatisPlus : '3.5.2',
+    dynamicDatasource : '3.5.2',
+    hutoolAll : '5.8.11',
+    mapstruct : '1.5.3.Final',
+    okhttp : '4.10.0',
+    commonsBeanutils : '1.9.4',
+    p6spy : '3.9.1',
+    jackson : '2.14.1',
+    jjwt : '0.9.1',
+    smileyHttpProxyServlet : '1.12.1',
+    zxingCore : '3.5.1',
+    gson : '2.10',
+    disruptor : '3.4.4',
+    reactor : '2022.0.9',
+    jasper : '11.0.0-M20',
+
+    //Azure
+    identity : '1.13.2',
+    msal4j : '1.16.2',
+
+    //OTP
+    aerogearOTP: "1.0.0",
+
+    // Test
+    junit: "5.8.2",
+]
+
+ext.libraries = [
+"junit-jupiter-api" : "org.junit.jupiter:junit-jupiter-api:${versions.junit}",
+"junit-jupiter-engine":"org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
+"commons-io:commons-io" : "commons-io:commons-io:${versions.commonsIo}",
+"":"org.apache.commons:commons-lang3:${versions.commonsLang3}",
+"fastjson":"com.alibaba:fastjson:${versions.fastjson}",
+"tomcat-embed-jasper":"org.apache.tomcat.embed:tomcat-embed-jasper:${versions.jasper}",
+"gson":"com.google.code.gson:gson:${versions.gson}",
+"aerogear-otp-java":"org.jboss.aerogear:aerogear-otp-java:${versions.aerogearOTP}",
+"disruptor":"com.lmax:disruptor:${versions.disruptor}",
+"mybatisplus-spring-boot-starter":"com.baomidou:mybatisplus-spring-boot-starter:${versions.mybatisplusSpringBootStarter}",
+"mybatis-plus-boot-starter":"com.baomidou:mybatis-plus-boot-starter:${versions.mybatisPlus}",
+"mapstruct":"org.mapstruct:mapstruct:${versions.mapstruct}",
+"hutool-all":"cn.hutool:hutool-all:${versions.hutoolAll}",
+"okhttp":"com.squareup.okhttp3:okhttp:${versions.okhttp}",
+"commons-beanutils":"commons-beanutils:commons-beanutils:${versions.commonsBeanutils}",
+"p6spy":"p6spy:p6spy:${versions.p6spy}",
+"jackson-core":"com.fasterxml.jackson.core:jackson-core:${versions.jackson}",
+"jjwt":"io.jsonwebtoken:jjwt:${versions.jjwt}",
+"smiley-http-proxy-servlet":"org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet:${versions.smileyHttpProxyServlet}",
+"zxing":"com.google.zxing:core:${versions.zxingCore}",
+"jasypt-spring-boot-starter":"com.github.ulisesbocchio:jasypt-spring-boot-starter:${versions.jasyptSpringBootStarter}",
+"dynamic-datasource-spring-boot-starter":"com.baomidou:dynamic-datasource-spring-boot-starter:${versions.dynamicDatasource}",
+
+// SpringBoot
+
+"spring-boot-starter":"org.springframework.boot:spring-boot-starter:${versions.springBoot}",
+"spring-session-core": "org.springframework.session:spring-session-core:${versions.springSessionCore}",
+"spring-boot-starter-web":"org.springframework.boot:spring-boot-starter-web:${versions.springBoot}",
+"spring-boot-starter-webflux":"org.springframework.boot:spring-boot-starter-webflux:${versions.springBoot}",
+"spring-boot-autoconfigure":"org.springframework.boot:spring-boot-autoconfigure:${versions.springBoot}",
+"spring-boot-starter-data-jpa":"org.springframework.boot:spring-boot-starter-data-jpa:${versions.springBoot}",
+"spring-boot-starter-data-redis-reactive":"org.springframework.boot:spring-boot-starter-data-redis-reactive:${versions.springBoot}",
+"spring-boot-configuration-processor":"org.springframework.boot:spring-boot-configuration-processor:${versions.springBoot}",
+"spring-boot-devtools":"org.springframework.boot:spring-boot-devtools:${versions.springBoot}",
+"spring-boot-starter-test":"org.springframework.boot:spring-boot-starter-test:${versions.springBoot}",
+"spring-boot-autoconfigure-processor":"org.springframework.boot:spring-boot-autoconfigure-processor:${versions.springBoot}",
+]
+
+ext.imports = [
+    "spring-boot-dependencies" : "org.springframework.boot:spring-boot-dependencies:${versions.springBoot}",
+    "spring-data-bom":"org.springframework.data:spring-data-bom:${versions.springData}",
+    "spring-cloud-dependencies":"org.springframework.cloud:spring-cloud-dependencies:${versions.springCloud}",
+    "spring-cloud-alibaba-dependencies":"com.alibaba.cloud:spring-cloud-alibaba-dependencies:${versions.springCloudAlibaba}",
+    "reactor-bom":"io.projectreactor:reactor-bom:${versions.reactor}",
+]

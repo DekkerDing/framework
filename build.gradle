@@ -1,56 +1,41 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+    id 'java-library'
+    id 'maven-publish'
+    id 'org.springframework.boot' version '2.6.14'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
 description '解决方案集合'
 
-buildscript {
+apply from: 'dependencies.gradle'
 
-    ext {
+allprojects {
 
-        // Import dependency management from Spring Boot a series of
-        springBootVersion = '2.6.14'
-        springDataVersion = '2022.0.0'
-        springCloudVersion = '2021.0.5'
-        springCloudAlibabaVersion = '2021.1'
-        springFrameworkVersion = '5.3.24'
-        springSecurityOauth2AuthorizationServerVersion = '0.4.2'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'application'
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-        // SpringBoot
-        springSessionCoreVersion = '2.6.3'
 
-        // SpringBootStarter
-        mybatisplusSpringBootStarterVersion = '1.0.5'
-        kaptchaSpringBootStarterVersion = '1.1.0'
-        jasyptSpringBootStarterVersion = '3.0.5'
+    group 'io.github.DekkerDing'
+    version '1.0-SNAPSHOT'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    compileJava.options.encoding "UTF-8"
+    compileTestJava.options.encoding "UTF-8"
 
-        // Third Party
-        fastjsonVersion = '2.0.20'
-        commonsIoVersion = '2.11.0'
-        commonsLang3Version = '3.12.0'
-        slf4jVersion = '1.7.20'
-
-        mybatisPlusVersion = '3.5.2'
-        dynamicDatasourceVersion = '3.5.2'
-        hutoolAllVersion = '5.8.11'
-        mapstructVersion = '1.5.3.Final'
-        okhttpVersion = '4.10.0'
-        commonsBeanutilsVersion = '1.9.4'
-        p6spyVersion = '3.9.1'
-        jacksonVersion = '2.14.1'
-        jjwtVersion = '0.9.1'
-        smileyHttpProxyServletVersion = '1.12.1'
-        zxingCoreVersion = '3.5.1'
-        gsonVersion = '2.10'
-        disruptorVersion = '3.4.4'
-        reactorVersion = '2022.0.9'
-        jasper = '11.0.0-M20'
-
-        //Azure
-        identityVersion = '1.13.2'
-        msal4jVersion = '1.16.2'
-
-        //OTP
-        aerogearOTPVersion = '1.0.0'
-
-        // Test
-        junitVersion = '5.8.2'
+    dependencies {
+        testImplementation "org.junit.jupiter:junit-jupiter-api"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+        testImplementation "org.springframework.boot:spring-boot-starter-test"
+        implementation(fileTree("lib"))
+        //classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 
     repositories {
@@ -76,33 +61,6 @@ buildscript {
         mavenCentral()
     }
 
-    dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-    }
-}
-
-allprojects {
-    apply plugin: 'java'
-    apply plugin: 'idea'
-    apply plugin: 'java-library'
-    apply plugin: 'maven-publish'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
-
-
-    group 'io.github.DekkerDing'
-    version '1.0-SNAPSHOT'
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-    compileJava.options.encoding "UTF-8"
-    compileTestJava.options.encoding "UTF-8"
-
-    dependencies {
-        testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
-        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-        testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-    }
-
     test {
         useJUnitPlatform()
     }
@@ -117,52 +75,24 @@ subprojects {
         developmentOnly "org.springframework.boot:spring-boot-devtools"
         annotationProcessor 'org.projectlombok:lombok'
         testAnnotationProcessor 'org.projectlombok:lombok'
-        api 'org.projectlombok:lombok'
-        api "org.springframework.boot:spring-boot:${springBootVersion}"
-        api "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
-        api "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+        compileOnly 'org.projectlombok:lombok'
+        api "org.springframework.boot:spring-boot"
+        api "org.springframework.boot:spring-boot-configuration-processor"
+        api "org.springframework.boot:spring-boot-devtools"
         api 'org.springframework.cloud:spring-cloud-starter'
     }
 
     dependencyManagement {
-
         dependencies {
-            dependency "commons-io:commons-io:${commonsIoVersion}"
-            dependency "org.apache.commons:commons-lang3:${commonsLang3Version}"
-            dependency "com.alibaba:fastjson:${fastjsonVersion}"
-            dependency "com.google.code.gson:gson:${gsonVersion}"
-            dependency "com.baomidou:mybatisplus-spring-boot-starter:${mybatisplusSpringBootStarterVersion}"
-            dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
-            dependency "org.mapstruct:mapstruct:${mapstructVersion}"
-            dependency "cn.hutool:hutool-all:${hutoolAllVersion}"
-            dependency "com.squareup.okhttp3:okhttp:${okhttpVersion}"
-            dependency "commons-beanutils:commons-beanutils:${commonsBeanutilsVersion}"
-            dependency "p6spy:p6spy:${p6spyVersion}"
-            dependency "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
-            dependency "io.jsonwebtoken:jjwt:${jjwtVersion}"
-            dependency "org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet:${smileyHttpProxyServletVersion}"
-            dependency "com.google.zxing:core:${zxingCoreVersion}"
-            dependency "com.github.ulisesbocchio:jasypt-spring-boot-starter:${jasyptSpringBootStarterVersion}"
-            dependency "com.baomidou:dynamic-datasource-spring-boot-starter:${dynamicDatasourceVersion}"
-
-            // SpringBoot
-            dependency "org.springframework.boot:spring-boot-starter:${springBootVersion}"
-            dependency "org.springframework.session:spring-session-core:${springSessionCoreVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-starter-data-redis-reactive:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
-            dependency "org.springframework.boot:spring-boot-autoconfigure-processor:${springBootVersion}"
+            for (version in rootProject.ext.libraries) {
+                dependency version.value
+            }
         }
 
         imports {
-            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
-            mavenBom "org.springframework.data:spring-data-bom:${springDataVersion}"
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
-            mavenBom "io.projectreactor:reactor-bom:${reactorVersion}"
+            for (imports in rootProject.ext.imports) {
+                mavenBom imports.value
+            }
         }
     }
 }
@@ -262,7 +192,7 @@ configurations.all() {
 }
 
 gradle.projectsEvaluated {
-    tasks.withType(JavaCompile){
+    tasks.withType(JavaCompile) {
         options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
     }
 }
