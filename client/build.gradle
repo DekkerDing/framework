@@ -5,7 +5,7 @@ plugins {
 description '客户端'
 
 dependencies {
-
+    api 'org.springframework.cloud:spring-cloud-starter-openfeign'
 }
 
 test {
