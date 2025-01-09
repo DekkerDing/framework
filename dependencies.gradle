@@ -81,9 +81,12 @@ ext.libraries = [
 "spring-boot-starter-data-jpa":"org.springframework.boot:spring-boot-starter-data-jpa:${versions.springBoot}",
 "spring-boot-starter-data-redis-reactive":"org.springframework.boot:spring-boot-starter-data-redis-reactive:${versions.springBoot}",
 "spring-boot-configuration-processor":"org.springframework.boot:spring-boot-configuration-processor:${versions.springBoot}",
-"spring-boot-devtools":"org.springframework.boot:spring-boot-devtools:${versions.springBoot}",
+    "spring-boot-devtools":"org.springframework.boot:spring-boot-devtools:${versions.springBoot}",
 "spring-boot-starter-test":"org.springframework.boot:spring-boot-starter-test:${versions.springBoot}",
 "spring-boot-autoconfigure-processor":"org.springframework.boot:spring-boot-autoconfigure-processor:${versions.springBoot}",
+"spring-web":"org.springframework:spring-web:${versions.springFramework}",
+"spring-core":"org.springframework:spring-core:${versions.springFramework}",
+"spring-aop":"org.springframework:spring-aop:${versions.springFramework}",
 ]
 
 ext.imports = [
