@@ -7,13 +7,21 @@ description '安全权限'
 dependencies {
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-    api('org.springframework.security:spring-security-core')
+    api ('org.springframework.security:spring-security-core'){
+        transitive(true)
+    }
 
-    api('org.springframework.security:spring-security-config')
+    api ('org.springframework.security:spring-security-config'){
+        transitive(true)
+    }
 
-    api('org.springframework.security:spring-security-rsa')
+    api ('org.springframework.security:spring-security-rsa'){
+        transitive(true)
+    }
 
-    api('org.springframework.security:spring-security-crypto')
+    api ('org.springframework.security:spring-security-crypto'){
+        transitive(true)
+    }
 
     // https://mvnrepository.com/artifact/com.azure/azure-identity
 //    api("com.azure:azure-identity:${identityVersion}"){
@@ -31,26 +39,26 @@ dependencies {
 //    }
 
     // https://mvnrepository.com/artifact/org.jboss.aerogear/aerogear-otp-java
-    api('org.jboss.aerogear:aerogear-otp-java'){
-        transitive(true)
+    api ('org.jboss.aerogear:aerogear-otp-java'){
+        transitive(false)
     }
 
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-resource-server
-    api('org.springframework.boot:spring-boot-starter-oauth2-resource-server') {
+    api ('org.springframework.boot:spring-boot-starter-oauth2-resource-server') {
         transitive(true)
     }
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
-    api('org.springframework.boot:spring-boot-starter-oauth2-client') {
+    api ('org.springframework.boot:spring-boot-starter-oauth2-client') {
         transitive(true)
     }
 
-    api('org.springframework.security:spring-security-remoting'){
-        transitive(false)
+    api ('org.springframework.security:spring-security-remoting'){
+        transitive(true)
     }
 
-    api project(':events')
+    implementation project(':events')
 
 }
 

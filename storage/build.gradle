@@ -6,22 +6,22 @@ description '存储'
 
 dependencies {
 
-    runtimeOnly("mysql:mysql-connector-java:8.0.33")
+    runtimeOnly('mysql:mysql-connector-java:8.0.33')
 
     implementation('com.mysql:mysql-connector-j') {
-        transitive(true)
+        transitive(false)
     }
     implementation('org.postgresql:postgresql') {
-        transitive(true)
+        transitive(false)
     }
     implementation('com.baomidou:mybatisplus-spring-boot-starter') {
-        transitive(true)
+        transitive(false)
     }
     implementation('com.baomidou:mybatis-plus-boot-starter') {
-        transitive(true)
+        transitive(false)
     }
     implementation('com.baomidou:dynamic-datasource-spring-boot-starter'){
-        transitive(true)
+        transitive(false)
     }
     implementation 'p6spy:p6spy'
 }

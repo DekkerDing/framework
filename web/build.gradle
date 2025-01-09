@@ -9,14 +9,16 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux
     api('org.springframework.boot:spring-boot-starter-web')
 
-    api('org.springframework.security:spring-security-web')
-
-    api("org.apache.tomcat.embed:tomcat-embed-jasper") {
-        transitive(true)
+    implementation('org.springframework.security:spring-security-web'){
+        transitive(false)
     }
 
-    api project(':security')
-    api project(':client')
+    implementation("org.apache.tomcat.embed:tomcat-embed-jasper") {
+        transitive(false)
+    }
+
+    implementation project(':security')
+    implementation project(':client')
 }
 
 test {
