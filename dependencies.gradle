@@ -52,7 +52,7 @@ ext.libraries = [
     "junit-jupiter-api" : "org.junit.jupiter:junit-jupiter-api:${versions.junit}",
     "junit-jupiter-engine":"org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
     "commons-io:commons-io" : "commons-io:commons-io:${versions.commonsIo}",
-    "":"org.apache.commons:commons-lang3:${versions.commonsLang3}",
+    "commons-lang3":"org.apache.commons:commons-lang3:${versions.commonsLang3}",
     "fastjson":"com.alibaba:fastjson:${versions.fastjson}",
     "tomcat-embed-jasper":"org.apache.tomcat.embed:tomcat-embed-jasper:${versions.jasper}",
     "gson":"com.google.code.gson:gson:${versions.gson}",
