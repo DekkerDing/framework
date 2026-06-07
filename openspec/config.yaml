@@ -1,0 +1,34 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+context: |
+  项目名称: framework
+  项目类型: Spring Framework 扩展框架
+
+  技术栈:
+  - Java (Spring Framework, Spring Boot)
+  - Gradle (多模块构建)
+  - Spring 生态: Spring Security, Spring Web, Spring Data, Spring Batch, Spring Reactive
+
+  项目结构:
+  - 多模块 Gradle 项目
+  - 核心模块: beans, core, context, config, web, security, boot, aspects, reactive 等
+  - 扩展模块: cache, storage, monitoring, transaction, events, listener, provider, manager 等
+
+  开发规范:
+  - 使用 Java 编码规范
+  - 遵循 Spring Framework 设计模式
+  - 使用 Gradle 进行依赖管理和构建
+  - 模块化设计，保持低耦合高内聚
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
